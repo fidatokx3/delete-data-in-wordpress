@@ -1,0 +1,14 @@
+<?php
+if(isset($_POST['reject-offer'])){
+    global $wpdb;
+    $tablename1 = $wpdb->prefix . "negotiators";
+    
+   $wpdb->query("DELETE FROM $tablename1  WHERE id = 17 " );
+   // $sql = "DELETE FROM `wp_negotiators` WHERE id = 36 ;";
+   $url = get_option( 'siteurl' ); 
+   $url2 = $url . "/wp-admin/admin.php?page=negotiator-in-progress-sub" ;
+   wp_redirect( $url2 );
+
+}
+
+?>
